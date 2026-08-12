@@ -1,0 +1,172 @@
+.contact-page {
+    width: min(900px, 100%);
+    margin: 0 auto;
+    padding: 4rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    h1 {
+        text-align: center;
+        font-family: var(--font-hand);
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        color: var(--color-pink-500);
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .75rem;
+
+            padding: 1.5rem;
+
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+
+            color: var(--color-blue-500);
+            background: var(--color-white);
+
+            border: 2px solid var(--color-pink-100);
+            border-radius: var(--radius-lg);
+
+            box-shadow: var(--shadow-sm);
+
+            transition:
+                background var(--transition-fast),
+                border-color var(--transition-fast),
+                transform var(--transition-fast),
+                box-shadow var(--transition-fast);
+
+            &:hover {
+                background: var(--color-pink-50);
+                border-color: var(--color-pink-300);
+
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-md);
+            }
+        }
+    }
+
+    .contact-form {
+        padding: 2rem;
+
+        background: var(--color-pink-50);
+        border: 2px solid var(--color-border);
+        border-radius: var(--radius-lg);
+
+        box-shadow: var(--shadow-sm);
+
+        h2 {
+            margin-bottom: 2rem;
+
+            text-align: center;
+            color: var(--color-pink-500);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                label {
+                    font-weight: 600;
+                    color: var(--color-blue-300);
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+
+                    padding: .9rem 1rem;
+
+                    font: inherit;
+                    color: var(--color-text);
+
+                    background: var(--color-background);
+
+                    border: 2px solid var(--color-pink-100);
+                    border-radius: var(--radius-md);
+
+                    outline: none;
+
+                    transition:
+                        border-color var(--transition-fast),
+                        box-shadow var(--transition-fast);
+
+                    &:focus {
+                        border-color: var(--color-pink-400);
+                        box-shadow: 0 0 0 4px rgba(228, 106, 147, .15);
+                    }
+                }
+
+                textarea {
+                    resize: vertical;
+                    min-height: 180px;
+                }
+            }
+
+            button {
+                align-self: flex-end;
+
+                padding: .9rem 2rem;
+
+                font: inherit;
+                font-weight: 600;
+
+                color: var(--color-white);
+                background: var(--color-pink-500);
+
+                border: none;
+                border-radius: var(--radius-md);
+
+                cursor: pointer;
+
+                transition:
+                    background var(--transition-fast),
+                    transform var(--transition-fast),
+                    box-shadow var(--transition-fast);
+
+                &:hover {
+                    background: var(--color-pink-600);
+                    box-shadow: var(--shadow-md);
+
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        padding: 3rem 1.5rem;
+
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form {
+            padding: 1.5rem;
+
+            form {
+                button {
+                    width: 100%;
+                    align-self: stretch;
+                }
+            }
+        }
+    }
+}

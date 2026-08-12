@@ -1,0 +1,75 @@
+:root {
+  /* ===========================
+     Brand Colors
+  =========================== */
+
+
+   --color-pink-10: #fffafc;
+   --color-pink-50:  #FFEBF2; /* tu principal */
+   --color-pink-100: #FDD6E5;
+   --color-pink-200: #F7B3CB;
+   --color-pink-300: #F08FAF;
+   --color-pink-400: #E46A93;
+   --color-pink-500: #AA5D78; 
+   --color-pink-600: #8E4A62;
+   --color-pink-700: #733B4F;
+
+
+   --color-blue-50: #EBFBFF;
+   --color-blue-100: #CFEFF5;
+   --color-blue-300:#85bdc7;
+   --color-blue-500: #307080; /* tu principal */
+   --color-blue-700: #1F4E59;
+
+  /* ===========================
+     Neutral Colors
+  =========================== */
+
+  --color-white: #FFFFFF;
+  --color-background: #FAFAFA;
+
+  --color-text: #2F2F2F;
+  --color-text-light: #666666;
+
+  --color-border: #E8E8E8;
+
+  /* ===========================
+     Status Colors
+  =========================== */
+
+  --color-success: #4CAF50;
+  --color-warning: #F4B400;
+  --color-error: #E53935;
+
+  /* ===========================
+     Shadows
+  =========================== */
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.16);
+
+  /* ===========================
+     Border Radius
+  =========================== */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* ===========================
+     Transitions
+  =========================== */
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+
+  /* ===========================
+     Fonts
+  =========================== */
+
+   --font-main: 'Inter', sans-serif;
+   --font-hand: 'Playwrite ID', cursive;
+
+}

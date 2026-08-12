@@ -1,0 +1,31 @@
+//bases
+@use './base/variables';
+@use './base/global';
+@use './base/reset';
+@use './base/typography';
+@use './base/animations';
+
+//components
+@use './components/header';
+@use './components/footer';
+@use './components/subheader';
+@use './components/logo';
+
+// components/home
+
+@use './components/home/hero';
+@use './components/home/categories';
+@use './components/home/featured';
+@use './components/home/infobanner';
+
+// components/shop
+@use './components/shop/productcard';
+@use './components/shop/productgrid';
+
+// pages
+
+@use './pages/shop';
+@use './pages/about';
+@use './pages/faq';
+@use './pages/contact';
+
