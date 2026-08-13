@@ -2,14 +2,14 @@
     <header class="header">
 
 
-        <div class="search">
+        <form class="search" @submit.prevent="searchProducts">
             <input
                 v-model="search"
                 type="search"
                 placeholder="Buscar productos..."
-                @keyup.enter="searchProducts"
+                aria-label="Buscar productos"
             >
-        </div>
+        </form>
 
         <Logo />
 
@@ -50,7 +50,7 @@ watch(
 
 function searchProducts() {
     router.push({
-        name: "shop",
+        name: "search",
         query: {
             q: search.value
         }

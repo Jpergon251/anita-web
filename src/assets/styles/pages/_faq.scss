@@ -1,88 +1,336 @@
-.faq-page {
-    width: min(900px, 100%);
-    margin: 0 auto;
-    padding: 4rem 2rem;
+// ============================================================
+// FAQ PAGE
+// ============================================================
 
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.faq-page {
+  width: min(100%, 900px);
+  margin: 0 auto;
+
+  padding: clamp(3rem, 7vw, 5rem) clamp(1rem, 4vw, 2rem);
+
+  // ========================================================
+  // HEADER
+  // ========================================================
+
+  .faq-header {
+    margin-bottom: 2.5rem;
+
+    text-align: center;
 
     h1 {
-        text-align: center;
-        font-family: var(--font-hand);
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        color: var(--color-pink-500);
-        margin-bottom: 1rem;
+      margin: 0;
+
+      color: var(--color-pink-500);
+
+      font-family: var(--font-hand);
+      font-size: clamp(2.7rem, 7vw, 4rem);
+      font-weight: 700;
+      line-height: 1.05;
     }
+
+    p {
+      max-width: 600px;
+      margin: 5rem auto 0;
+
+      color: var(--color-text-light);
+
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+
+  // ========================================================
+  // FAQ LIST
+  // ========================================================
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
 
     details {
-        background: var(--color-white);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-md);
+      overflow: hidden;
 
-        box-shadow: var(--shadow-sm);
-        overflow: hidden;
+      background: var(--color-white);
 
-        transition:
-            box-shadow var(--transition-fast),
-            border-color var(--transition-fast);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
 
-        &[open] {
-            border-color: var(--color-pink-200);
-            box-shadow: var(--shadow-md);
-        }
+      box-shadow: var(--shadow-sm);
+
+      transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast);
+
+      &:hover {
+        border-color: var(--color-pink-200);
+
+        box-shadow: var(--shadow-md);
+
+        transform: translateY(-1px);
+      }
+
+      &[open] {
+        border-color: var(--color-pink-200);
+
+        box-shadow: var(--shadow-md);
+
+        transform: none;
 
         summary {
-            padding: 1.25rem 1.5rem;
+          color: var(--color-pink-600);
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+      }
 
-            cursor: pointer;
-            list-style: none;
+      // =================================================
+      // QUESTION
+      // =================================================
 
-            font-weight: 600;
-            color: var(--color-blue-500);
+      summary {
+        min-height: 64px;
 
-            &::-webkit-details-marker {
-                display: none;
-            }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-            &::after {
-                content: "+";
-                font-size: 1.5rem;
-                font-weight: 400;
+        gap: 1.5rem;
 
-                transition: transform var(--transition-fast);
-            }
+        padding: 1.15rem 1.25rem 1.15rem 1.5rem;
+
+        color: var(--color-blue-500);
+
+        font-size: 0.98rem;
+        font-weight: 650;
+        line-height: 1.45;
+
+        cursor: pointer;
+        list-style: none;
+
+        transition:
+          color var(--transition-fast),
+          background var(--transition-fast);
+
+        &::-webkit-details-marker {
+          display: none;
         }
 
-        &[open] summary::after {
-            content: "−";
+        &::marker {
+          display: none;
+          content: "";
         }
 
-        p {
-            padding: 0 1.5rem 1.5rem;
+        &::after {
+          content: "+";
 
-            color: var(--color-text);
-            line-height: 1.8;
+          flex: 0 0 auto;
+
+          width: 30px;
+          height: 30px;
+
+          display: grid;
+          place-items: center;
+
+          color: var(--color-pink-500);
+          background: var(--color-pink-50);
+
+          border-radius: 50%;
+
+          font-size: 1.25rem;
+          font-weight: 400;
+          line-height: 1;
+
+          transition:
+            transform var(--transition-fast),
+            background var(--transition-fast),
+            color var(--transition-fast);
         }
+
+        &:hover {
+          background: var(--color-pink-50);
+          color: var(--color-pink-600);
+        }
+
+        &:focus-visible {
+          outline: 3px solid rgba(170, 93, 120, 0.18);
+          outline-offset: -3px;
+        }
+      }
+
+      // =================================================
+      // ANSWER
+      // =================================================
+
+      > p {
+        margin: 0;
+
+        padding: 0 1.5rem 1.5rem;
+
+        color: var(--color-text);
+
+        font-size: 0.92rem;
+        line-height: 1.75;
+      }
     }
+  }
 }
 
+// ============================================================
+// TABLET
+// ============================================================
+
 @media (max-width: 768px) {
-    .faq-page {
-        padding: 3rem 1.5rem;
+  .faq-page {
+    padding: 3rem 1.25rem;
 
-        details {
-            summary {
-                padding: 1rem 1.25rem;
-            }
+    .faq-header {
+      margin-bottom: 2rem;
 
-            p {
-                padding: 0 1.25rem 1.25rem;
-            }
-        }
+      h1 {
+        font-size: clamp(2.5rem, 10vw, 3.2rem);
+      }
+
+      p {
+        margin-top: 3.75rem;
+        font-size: 0.9rem;
+      }
     }
+
+    .faq-list {
+      gap: 0.75rem;
+
+      details {
+        summary {
+          min-height: 58px;
+
+          padding: 1rem 1rem 1rem 1.15rem;
+
+          font-size: 0.92rem;
+
+          &::after {
+            width: 28px;
+            height: 28px;
+
+            font-size: 1.15rem;
+          }
+        }
+
+        > p {
+          padding: 0 1.15rem 1.25rem;
+
+          font-size: 0.88rem;
+        }
+      }
+    }
+  }
+}
+
+// ============================================================
+// MOBILE
+// ============================================================
+
+@media (max-width: 480px) {
+  .faq-page {
+    padding: 2.5rem 0.9rem;
+
+    .faq-header {
+      margin-bottom: 1.5rem;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        margin-top: 2.75rem;
+
+        font-size: 0.85rem;
+      }
+    }
+
+    .faq-list {
+      gap: 0.65rem;
+
+      details {
+        border-radius: var(--radius-md);
+
+        summary {
+          min-height: 54px;
+
+          gap: 0.75rem;
+
+          padding: 0.9rem 0.8rem 0.9rem 1rem;
+
+          font-size: 0.87rem;
+
+          &::after {
+            width: 26px;
+            height: 26px;
+
+            font-size: 1.05rem;
+          }
+        }
+
+        > p {
+          padding: 0 1rem 1.1rem;
+
+          font-size: 0.85rem;
+          line-height: 1.65;
+        }
+      }
+    }
+  }
+}
+
+// ============================================================
+// VERY SMALL SCREENS
+// ============================================================
+
+@media (max-width: 360px) {
+  .faq-page {
+    padding-inline: 0.7rem;
+
+    .faq-header {
+      h1 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .faq-list {
+      details {
+        summary {
+          padding-left: 0.85rem;
+          padding-right: 0.7rem;
+
+          font-size: 0.84rem;
+
+          &::after {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        > p {
+          padding-inline: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+// ============================================================
+// REDUCED MOTION
+// ============================================================
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-page {
+    details,
+    details summary,
+    details summary::after {
+      transition: none !important;
+    }
+  }
 }

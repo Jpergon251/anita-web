@@ -13,19 +13,19 @@
 
 // components/home
 
-@use './components/home/hero';
-@use './components/home/categories';
-@use './components/home/featured';
-@use './components/home/infobanner';
+// @use './components/home/hero';
+// @use './components/home/categories';
+// @use './components/home/featured';
+// @use './components/home/infobanner';
 
 // components/shop
 @use './components/shop/productcard';
 @use './components/shop/productgrid';
 
 // pages
-
+@use './pages/home';
 @use './pages/shop';
 @use './pages/about';
 @use './pages/faq';
 @use './pages/contact';
-
+@use './pages/admin';

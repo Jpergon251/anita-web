@@ -1,50 +1,57 @@
 <template>
     <main class="faq-page">
 
-        <h1>Preguntas frecuentes</h1>
+        <header class="faq-header">
+            <h1>Preguntas frecuentes</h1>
+            <p>Encuentra respuestas a las preguntas más habituales sobre nuestros productos y pedidos.</p>
+        </header>
 
-        <details>
-            <summary>¿Cuáles son las formas de pago?</summary>
+        <section class="faq-list" aria-label="Preguntas frecuentes">
 
-            <p>
-                Nuestras formas de pago incluyen Mercado Pago.
-            </p>
-        </details>
+            <details>
+                <summary>¿Cuáles son las formas de pago?</summary>
 
-        <details>
-            <summary>¿Cuál es el costo de envío?</summary>
+                <p>
+                    Nuestras formas de pago incluyen Mercado Pago.
+                </p>
+            </details>
 
-            <p>
-                El costo de envío se mostrará en función del total de la compra
-                y de la ubicación al momento de finalizar el pedido.
-            </p>
-        </details>
+            <details>
+                <summary>¿Cuál es el costo de envío?</summary>
 
-        <details>
-            <summary>¿Dónde puedo recibir mi pedido?</summary>
+                <p>
+                    El costo de envío se mostrará en función del total de la compra
+                    y de la ubicación al momento de finalizar el pedido.
+                </p>
+            </details>
 
-            <p>
-                Realizamos envíos a todo el país.
-            </p>
-        </details>
+            <details>
+                <summary>¿Dónde puedo recibir mi pedido?</summary>
 
-        <details>
-            <summary>¿Cómo se realizan los envíos?</summary>
+                <p>
+                    Realizamos envíos a todo el país.
+                </p>
+            </details>
 
-            <p>
-                Trabajamos con Correo Argentino.
-            </p>
-        </details>
+            <details>
+                <summary>¿Cómo se realizan los envíos?</summary>
 
-        <details>
-            <summary>¿Cuánto tarda en llegar el pedido?</summary>
+                <p>
+                    Trabajamos con Correo Argentino.
+                </p>
+            </details>
 
-            <p>
-                El tiempo de entrega dependerá del tipo de envío seleccionado.
-                Los despachos se realizan, por lo general, los días viernes y la
-                demora es de entre 3 y 7 días hábiles.
-            </p>
-        </details>
+            <details>
+                <summary>¿Cuánto tarda en llegar el pedido?</summary>
+
+                <p>
+                    El tiempo de entrega dependerá del tipo de envío seleccionado.
+                    Los despachos se realizan, por lo general, los días viernes y la
+                    demora es de entre 3 y 7 días hábiles.
+                </p>
+            </details>
+
+        </section>
 
     </main>
 </template>

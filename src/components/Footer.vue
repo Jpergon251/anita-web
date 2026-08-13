@@ -3,8 +3,10 @@
 
         <div class="footer-container">
 
-            <!-- BRAND TEXT ONLY -->
+            <!-- BRAND -->
             <section class="footer-brand">
+
+                <h2>Rincón de la Esperanza</h2>
 
                 <p>
                     Papelería creativa y personalizada para regalar,
@@ -19,25 +21,45 @@
                 <h3>Contacto</h3>
 
                 <ul>
+
                     <li>
-                        <Pin class="icon" />
-                        Argentina
+                        <span class="contact-item">
+                            <Pin class="icon" aria-hidden="true" />
+                            <span>Argentina</span>
+                        </span>
                     </li>
 
                     <li>
-                        <Mail class="icon" />
-                        contacto@rincondelaesperanza.com
+                        <a
+                            href="mailto:contacto@rincondelaesperanza.com"
+                        >
+                            <Mail class="icon" aria-hidden="true" />
+                            <span>contacto@rincondelaesperanza.com</span>
+                        </a>
                     </li>
 
                     <li>
-                        <Smartphone class="icon" />
-                        WhatsApp
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Smartphone class="icon" aria-hidden="true" />
+                            <span>WhatsApp</span>
+                        </a>
                     </li>
 
                     <li>
-                        <Instagram class="icon" />
-                        Instagram
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Instagram class="icon" aria-hidden="true" />
+                            <span>Instagram</span>
+                        </a>
                     </li>
+
                 </ul>
 
             </section>
@@ -45,13 +67,33 @@
         </div>
 
         <div class="footer-bottom">
-            © 2026 Rincón de la Esperanza · Hecho con
-            <Heart class="heart-icon" fill="currentColor" />
+
+            <p>
+                © 2026 Rincón de la Esperanza
+            </p>
+
+            <span class="separator">·</span>
+
+            <p class="made-with">
+                Hecho con
+                <Heart
+                    class="heart-icon"
+                    fill="currentColor"
+                    aria-hidden="true"
+                />
+            </p>
+
         </div>
 
     </footer>
 </template>
 
 <script setup>
-import { Pin, Mail, Smartphone, Instagram, Heart } from 'lucide-vue-next'
+import {
+    Pin,
+    Mail,
+    Smartphone,
+    Instagram,
+    Heart
+} from 'lucide-vue-next'
 </script>

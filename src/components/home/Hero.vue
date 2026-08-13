@@ -3,17 +3,25 @@
 
         <div class="hero-content">
 
+            <span class="hero-eyebrow">
+                Rincón de la Esperanza
+            </span>
+
             <h1>
-                Papelería creativa para tu día a día ✨
+                Papelería creativa
+                <span>para tu día a día ✨</span>
             </h1>
 
             <p>
                 Organiza, crea y regala con emoción.
             </p>
 
-            <button>
+            <RouterLink
+                :to="{ name: 'shop' }"
+                class="hero-button"
+            >
                 Ver productos
-            </button>
+            </RouterLink>
 
         </div>
 
