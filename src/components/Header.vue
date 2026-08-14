@@ -1,7 +1,6 @@
 <template>
     <header class="header">
 
-
         <form class="search" @submit.prevent="searchProducts">
             <input
                 v-model="search"
@@ -14,27 +13,43 @@
         <Logo />
 
         <section class="actions">
-            <button>
+            <button aria-label="Favoritos">
                 <Heart class="icon" />
             </button>
 
-            <button>
+            <button aria-label="Carrito">
                 <ShoppingBag class="icon" />
-            </button>
-
-            <button @click="$emit('toggle-menu')">
-                ☰
             </button>
         </section>
 
-    </header>
+        <button
+            class="menu-button"
+            :aria-label="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
+            :aria-expanded="menuOpen"
+            @click="$emit('toggle-menu')"
+        >
+            <ArrowBigUp
+                fill="currentColor"
+                :class="['icon', { active: menuOpen }]"
+            />
+        </button>
 
+    </header>
 </template>
 <script setup>
-import { ref,computed, watch } from "vue";
-import { Heart, ShoppingBag } from "lucide-vue-next";
+import { ref, watch } from "vue";
+import { ArrowBigUp, Heart, ShoppingBag } from "lucide-vue-next";
 import Logo from "./Logo.vue";
 import { useRouter, useRoute } from "vue-router";
+
+defineProps({
+    menuOpen: {
+        type: Boolean,
+        default: false
+    }
+});
+
+defineEmits(["toggle-menu"]);
 
 const router = useRouter();
 const route = useRoute();

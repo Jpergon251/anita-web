@@ -14,7 +14,7 @@
   align-items: center;
 
   gap: var(--header-gap);
-  padding: 0 var(--header-padding);
+  padding: 15px var(--header-padding);
 
   box-sizing: border-box;
 
@@ -157,6 +157,66 @@
     }
   }
 
+  .menu-button {
+    position: absolute;
+
+    left: 50%;
+    bottom: -15px;
+
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    transform: translateX(-50%);
+
+    border: 1px solid var(--color-pink-200);
+    border-radius: 50%;
+
+    background: var(--color-white);
+    color: var(--color-pink-500);
+
+    box-shadow: var(--shadow-md);
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    transition:
+      background var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast),
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast);
+
+    &:hover {
+      background: var(--color-pink-500);
+      border-color: var(--color-pink-500);
+      color: var(--color-white);
+
+      box-shadow: var(--shadow-md);
+    }
+
+    &:active {
+      transform: translateX(-50%);
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgba(228, 106, 147, 0.2);
+      outline-offset: 3px;
+    }
+
+    .icon {
+        transition: transform var(--transition-fast);
+
+        &.active {
+            transform: rotate(180deg);
+        }
+    }
+  }
   // ========================================================
   // TABLET
   // ========================================================
@@ -187,7 +247,7 @@
       }
     }
   }
-
+  
   // ========================================================
   // MOBILE
   // ========================================================
