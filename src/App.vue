@@ -5,7 +5,7 @@
         <Subheader v-if="!isAdminRoute" v-show="menuOpen" />
     </Transition>
 
-    <main>
+    <main class="app-content">
         <RouterView />
     </main>
 
