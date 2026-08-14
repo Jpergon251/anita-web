@@ -53,12 +53,8 @@
 
         </section>
 
-
         <!-- MISSION -->
-        <section
-            class="about-mission"
-            aria-labelledby="mission-title"
-        >
+        <section class="about-mission" aria-labelledby="mission-title">
 
             <div class="about-mission__icon" aria-hidden="true">
                 ✦
@@ -87,10 +83,7 @@
 
 
         <!-- SOCIALS -->
-        <section
-            class="about-socials"
-            aria-labelledby="socials-title"
-        >
+        <section class="about-socials" aria-labelledby="socials-title">
 
             <div class="about-section-heading">
 
@@ -111,32 +104,17 @@
 
             <div class="about-socials__links">
 
-                <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Visitar Instagram"
-                >
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar Instagram">
                     <span>Instagram</span>
                     <span aria-hidden="true">↗</span>
                 </a>
 
-                <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Visitar Facebook"
-                >
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visitar Facebook">
                     <span>Facebook</span>
                     <span aria-hidden="true">↗</span>
                 </a>
 
-                <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Contactar por WhatsApp"
-                >
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
                     <span>WhatsApp</span>
                     <span aria-hidden="true">↗</span>
                 </a>

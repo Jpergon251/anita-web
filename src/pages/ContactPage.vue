@@ -1,82 +1,45 @@
 <template>
-    <main class="contact-page">
+  <main class="contact-page">
+    <h1>Contacto</h1>
 
-        <h1>Contacto</h1>
+    <section class="contact-info">
+      <a href="" target="_blank" rel="noopener noreferrer"> WhatsApp </a>
 
-        <section class="contact-info">
+      <a href="mailto:"> Email </a>
+    </section>
 
-            <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                WhatsApp
-            </a>
+    <section class="contact-form">
+      <h2>Envíanos un mensaje</h2>
 
-            <a
-                href="mailto:"
-            >
-                Email
-            </a>
+      <form>
+        <div class="form-group">
+          <label for="name">Nombre</label>
 
-        </section>
+          <input id="name" type="text" placeholder="Tu nombre" />
+        </div>
 
-        <section class="contact-form">
+        <div class="form-group">
+          <label for="email">Email</label>
 
-            <h2>Envíanos un mensaje</h2>
+          <input id="email" type="email" placeholder="tu@email.com" />
+        </div>
 
-            <form>
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
 
-                <div class="form-group">
-                    <label for="name">Nombre</label>
+          <input id="phone" type="tel" placeholder="+54..." />
+        </div>
 
-                    <input
-                        id="name"
-                        type="text"
-                        placeholder="Tu nombre"
-                    >
-                </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
+          <textarea id="message" rows="6" placeholder="Escribe tu mensaje..." />
+        </div>
 
-                    <input
-                        id="email"
-                        type="email"
-                        placeholder="tu@email.com"
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Teléfono</label>
-
-                    <input
-                        id="phone"
-                        type="tel"
-                        placeholder="+54..."
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-
-                    <textarea
-                        id="message"
-                        rows="6"
-                        placeholder="Escribe tu mensaje..."
-                    />
-                </div>
-
-                <button type="submit">
-                    Enviar mensaje
-                </button>
-
-            </form>
-
-        </section>
-
-    </main>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
