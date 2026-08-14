@@ -1,5 +1,5 @@
 <template>
-    <section class="admin-page">
+    <section class="admin-page categories-page">
         <header class="admin-page-header">
             <div>
                 <h1>Categorías</h1>
