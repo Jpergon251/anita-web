@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Home from '../pages/Home.vue'
 import ShopPage from '../pages/ShopPage.vue'
@@ -19,7 +19,7 @@ import AdminPasswordReset from '../pages/admin/AdminPasswordReset.vue'
 import { useAuth } from '../stores/auth'
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [
         {
             path: '/',
