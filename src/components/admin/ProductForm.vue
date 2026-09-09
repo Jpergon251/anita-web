@@ -120,9 +120,14 @@
         </p>
 
         <div class="form-actions">
-            <RouterLink to="/admin/products">
+            <button
+                type="button"
+                class="form-cancel"
+                :disabled="saving"
+                @click="$emit('cancel')"
+            >
                 Cancelar
-            </RouterLink>
+            </button>
 
             <button
                 :disabled="saving"
@@ -158,7 +163,7 @@ const props = defineProps({
     }
 })
 
-const emit = defineEmits(['saved'])
+const emit = defineEmits(['saved', 'cancel'])
 
 const form = reactive({
     name: props.product?.name || '',

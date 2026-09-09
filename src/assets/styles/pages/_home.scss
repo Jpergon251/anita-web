@@ -51,7 +51,7 @@
       ),
       radial-gradient(
         circle at 85% 70%,
-        rgba(235, 251, 255, 0.9),
+        rgba(253, 214, 229, 0.4),
         transparent 35%
       ),
       var(--color-pink-50);
@@ -93,7 +93,7 @@
 
       border-radius: 50%;
 
-      background: rgba(235, 251, 255, 0.5);
+      background: rgba(253, 214, 229, 0.35);
 
       pointer-events: none;
     }
@@ -248,13 +248,12 @@
       h2 {
         margin: 0;
 
-        color: var(--color-text);
+        color: var(--color-pink-700);
 
-        font-size: clamp(1.8rem, 4vw, 2.35rem);
-        font-weight: 800;
+        font-family: var(--font-hand);
+        font-size: clamp(2.3rem, 5.5vw, 3.3rem);
+        font-weight: 700;
         line-height: 1.15;
-
-        letter-spacing: -0.035em;
       }
 
       p {
@@ -268,42 +267,124 @@
     }
 
     // ----------------------------------------------------
-    // GRID
+    // CAROUSEL
     // ----------------------------------------------------
 
-    .categories-grid {
+    .categories-carousel-wrapper {
+      position: relative;
+      width: 100%;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .carousel-viewport {
+      overflow: hidden;
+      width: 100%;
+      padding: 1.5rem 0.5rem;
+      mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+    }
+
+    .categories-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      will-change: transform;
+      user-select: none;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      width: 48px;
+      height: 48px;
+
       display: grid;
+      place-items: center;
 
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      border: 1px solid var(--color-pink-200);
+      border-radius: 50%;
 
-      gap: 1rem;
+      background: var(--color-white);
+      color: var(--color-pink-600);
+
+      box-shadow: var(--shadow-md);
+
+      cursor: pointer;
+
+      transition:
+        background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+
+      &.prev {
+        left: -16px;
+      }
+
+      &.next {
+        right: -16px;
+      }
+
+      &:hover {
+        background: var(--color-pink-500);
+        color: var(--color-white);
+        border-color: var(--color-pink-500);
+        transform: translateY(-50%) scale(1.08);
+        box-shadow: 0 8px 24px rgba(170, 93, 120, 0.25);
+      }
+
+      &:active {
+        transform: translateY(-50%) scale(0.96);
+      }
+
+      &:focus-visible {
+        outline: 3px solid rgba(170, 93, 120, 0.3);
+        outline-offset: 2px;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
     }
 
     // ----------------------------------------------------
-    // CARD
+    // LARGE CARD
     // ----------------------------------------------------
 
     .category-card {
-      min-height: 125px;
+      flex: 0 0 250px;
+      width: 250px;
+      min-height: 290px;
 
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: space-between;
 
-      gap: 1rem;
+      padding: 2rem 1.4rem 1.5rem;
 
-      padding: 1.35rem 1.4rem;
+      border: 2px solid var(--color-pink-100);
+      border-radius: var(--radius-xl);
 
-      border: 1px solid var(--color-pink-100);
-      border-radius: var(--radius-lg);
-
-      background: var(--color-white);
+      background: linear-gradient(
+        160deg,
+        var(--color-white) 0%,
+        var(--color-pink-50) 100%
+      );
 
       color: var(--color-text);
-
       text-decoration: none;
+      text-align: center;
 
       box-shadow: var(--shadow-sm);
+      box-sizing: border-box;
 
       transition:
         background var(--transition-fast),
@@ -311,57 +392,106 @@
         box-shadow var(--transition-fast),
         transform var(--transition-fast);
 
-      .category-name {
-        min-width: 0;
-
-        overflow-wrap: anywhere;
-
-        font-size: 1rem;
-        font-weight: 700;
-        line-height: 1.35;
-      }
-
-      .category-arrow {
-        flex: 0 0 auto;
-
-        width: 34px;
-        height: 34px;
+      .category-icon-wrap {
+        width: 72px;
+        height: 72px;
 
         display: grid;
         place-items: center;
 
         border-radius: 50%;
 
+        background: var(--color-white);
+        border: 2px solid var(--color-pink-100);
+
+        box-shadow: var(--shadow-sm);
+
+        font-size: 2.3rem;
+
+        transition:
+          transform var(--transition-fast),
+          border-color var(--transition-fast);
+      }
+
+      .category-name {
+        margin: 1rem 0 0.5rem;
+
+        font-family: var(--font-hand);
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.2;
+
+        color: var(--color-pink-700);
+
+        text-align: center;
+        word-break: normal;
+        overflow-wrap: normal;
+        white-space: normal;
+
+        transition: color var(--transition-fast);
+      }
+
+      .category-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+
+        margin-top: auto;
+        padding: 0.45rem 1.15rem;
+
+        border-radius: 999px;
+
         background: var(--color-pink-50);
+        border: 1px solid var(--color-pink-200);
+
         color: var(--color-pink-600);
 
-        font-size: 1rem;
+        font-size: 0.82rem;
+        font-weight: 750;
+        letter-spacing: 0.02em;
 
         transition:
           background var(--transition-fast),
           color var(--transition-fast),
-          transform var(--transition-fast);
+          border-color var(--transition-fast);
+
+        .cta-arrow {
+          font-size: 0.95rem;
+          transition: transform var(--transition-fast);
+        }
       }
 
       &:hover {
-        background: var(--color-pink-50);
+        background: var(--color-white);
 
-        border-color: var(--color-pink-200);
+        border-color: var(--color-pink-300);
 
-        box-shadow: var(--shadow-md);
+        box-shadow: 0 14px 32px rgba(170, 93, 120, 0.18);
 
-        transform: translateY(-4px);
+        transform: translateY(-8px);
 
-        .category-arrow {
+        .category-icon-wrap {
+          border-color: var(--color-pink-300);
+          transform: scale(1.1) rotate(-3deg);
+        }
+
+        .category-name {
+          color: var(--color-pink-600);
+        }
+
+        .category-cta {
           background: var(--color-pink-500);
           color: var(--color-white);
+          border-color: var(--color-pink-500);
 
-          transform: translateX(3px);
+          .cta-arrow {
+            transform: translateX(4px);
+          }
         }
       }
 
       &:focus-visible {
-        outline: 3px solid rgba(170, 93, 120, 0.2);
+        outline: 3px solid rgba(170, 93, 120, 0.25);
         outline-offset: 3px;
       }
     }
@@ -427,7 +557,7 @@
     background: linear-gradient(
       135deg,
       var(--color-pink-50),
-      var(--color-blue-50, #ebfbff)
+      var(--color-pink-10, #fffafc)
     );
 
     border-top: 1px solid var(--color-pink-100);
@@ -444,7 +574,7 @@
 
       display: grid;
 
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
 
       gap: 1rem;
     }
@@ -627,19 +757,35 @@
       }
 
       .categories-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        gap: 0.75rem;
+        gap: 0.65rem;
       }
 
       .category-card {
-        min-height: 76px;
+        min-height: 64px;
 
-        padding: 1rem 1.1rem;
+        padding: 0.75rem 0.85rem;
+        gap: 0.5rem;
 
-        .category-arrow {
+        .category-main {
+          gap: 0.5rem;
+        }
+
+        .category-icon {
           width: 32px;
           height: 32px;
+          font-size: 1.1rem;
+        }
+
+        .category-name {
+          font-size: 0.82rem;
+        }
+
+        .category-arrow {
+          width: 24px;
+          height: 24px;
+          font-size: 0.8rem;
         }
       }
 

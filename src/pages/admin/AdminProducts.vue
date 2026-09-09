@@ -5,7 +5,7 @@
                 <h1>Productos</h1>
                 <p>Gestiona el catálogo y el stock.</p>
             </div>
-            <RouterLink to="/admin/products/new" class="button">+ Nuevo producto</RouterLink>
+            <button type="button" class="button" @click="openProductForm()">+ Nuevo producto</button>
         </header>
 
         <div class="catalog-tools">
@@ -49,7 +49,7 @@
                                         ? '●' : '○' }}</span> {{ product.is_active ? 'Publicado' : 'No publicado'
                                     }}</button></td>
                             <td data-label="Acciones" class="product-actions">
-                                <RouterLink :to="`/admin/products/${product.id}/edit`">Editar</RouterLink>
+                                <button type="button" class="link-button" @click="openProductForm(product)">Editar</button>
                                 <!-- <button :disabled="processing" @click="openPublicationModal(product)">{{ product.is_active ? 'Retirar' : 'Publicar' }}</button> -->
                                 <button class="danger-link" :disabled="processing"
                                     @click="openDeleteModal(product)">Eliminar</button>
@@ -60,6 +60,18 @@
             </div>
             <p v-else class="empty-state">{{ products.length ? 'No se encontraron productos.' : 'Todavía no hay productos.' }}</p>
         </template>
+
+        <div v-if="productFormOpen" class="admin-form-modal product-form-modal" role="dialog" aria-modal="true" aria-labelledby="product-form-title">
+            <div class="product-form-modal__content">
+                <h2 id="product-form-title">{{ productBeingEdited ? 'Editar producto' : 'Nuevo producto' }}</h2>
+                <ProductForm
+                    :product="productBeingEdited"
+                    :categories="editorCategories"
+                    @saved="handleProductSaved"
+                    @cancel="closeProductForm"
+                />
+            </div>
+        </div>
 
         <ConfirmModal :open="!!pendingPublication"
             :title="pendingPublication?.is_active ? '¿Quieres retirar este producto de la tienda?' : '¿Quieres publicar este producto?'"
@@ -76,6 +88,8 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import ConfirmModal from '../../components/ui/ConfirmModal.vue'
+import ProductForm from '../../components/admin/ProductForm.vue'
+import { getCategories } from '../../services/categories'
 import { deleteProduct, getProducts, removeProductImage, toggleProductActive } from '../../services/products'
 import { useAuth } from '../../stores/auth'
 import { supabase } from '../../../utils/supabase'
@@ -88,6 +102,9 @@ const statusFilter = ref('all')
 const pendingPublication = ref(null)
 const pendingDeletion = ref(null)
 const processing = ref(false)
+const productFormOpen = ref(false)
+const productBeingEdited = ref(null)
+const editorCategories = ref([])
 const filters = [{ value: 'all', label: 'Todas' }, { value: 'published', label: 'Publicados' }, { value: 'unpublished', label: 'No publicados' }]
 const auth = useAuth()
 
@@ -104,9 +121,32 @@ const stockClass = stock => stock === 0 ? 'out' : stock <= 5 ? 'low' : 'availabl
 async function load() {
     loading.value = true
     error.value = false
-    const result = await getProducts({}, true)
+    const [result, categoryResult] = await Promise.all([
+        getProducts({}, true),
+        getCategories()
+    ])
+    editorCategories.value = categoryResult.data || []
     if (result.error) { console.error(result.error); error.value = true } else products.value = result.data || []
     loading.value = false
+}
+
+function openProductForm(product = null) {
+    actionError.value = ''
+    productBeingEdited.value = product ? { ...product } : null
+    productFormOpen.value = true
+}
+
+function closeProductForm() {
+    if (!processing.value) {
+        productFormOpen.value = false
+        productBeingEdited.value = null
+    }
+}
+
+async function handleProductSaved() {
+    productFormOpen.value = false
+    productBeingEdited.value = null
+    await load()
 }
 
 function openPublicationModal(product) { actionError.value = ''; pendingPublication.value = product }

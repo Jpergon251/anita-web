@@ -19,8 +19,7 @@
         <summary>¿Cuál es el costo de envío?</summary>
 
         <p>
-          El costo de envío se mostrará en función del total de la compra y de
-          la ubicación al momento de finalizar el pedido.
+          El costo de envío será mostrado en base al total de la compra y ubicación en el momento que se realice la compra.
         </p>
       </details>
 
@@ -40,9 +39,7 @@
         <summary>¿Cuánto tarda en llegar el pedido?</summary>
 
         <p>
-          El tiempo de entrega dependerá del tipo de envío seleccionado. Los
-          despachos se realizan, por lo general, los días viernes y la demora es
-          de entre 3 y 7 días hábiles.
+          El tiempo de entrega dependerá del tipo de envío seleccionado. Los despachos se realizan por lo general los días viernes y la demora es de entre 3 y 7 días hábiles.
         </p>
       </details>
     </section>

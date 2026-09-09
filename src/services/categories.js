@@ -4,7 +4,7 @@ import { slugify } from "./products";
 export async function getCategories() {
   return supabase
     .from("categories")
-    .select("id, name, slug, description")
+    .select("id, name, slug, description, icon")
     .order("name");
 }
 export async function getCategoryBySlug(slug) {

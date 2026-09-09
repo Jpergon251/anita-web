@@ -84,7 +84,7 @@
   // LOGO
   // ========================================================
 
-  > :deep(.logo) {
+  .logo {
     justify-self: center;
   }
 
@@ -258,7 +258,7 @@
       width: min(100%, 300px);
     }
 
-    > :deep(.logo) {
+    .logo {
       position: absolute;
       left: 50%;
 
@@ -296,7 +296,7 @@
       width: 100%;
     }
 
-    > :deep(.logo) {
+    .logo {
       position: static;
 
       grid-column: 1;

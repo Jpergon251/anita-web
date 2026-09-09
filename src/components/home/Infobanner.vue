@@ -4,57 +4,59 @@
         <div class="info-container">
 
             <article class="info-item">
-
                 <span class="info-icon" aria-hidden="true">
                     🚚
                 </span>
-
                 <div class="info-content">
                     <h3>
                         Envíos a todo el país
                     </h3>
-
                     <p>
-                        Recibí tu pedido estés donde estés en Argentina.
+                        Trabajamos con Correo Argentino para envíos a todo el país.
                     </p>
                 </div>
             </article>
 
             <article class="info-item">
-
-                <span class="info-icon" aria-hidden="true">
-                    💳
-                </span>
-
-                <div class="info-content">
-                    <h3>
-                        Pago seguro
-                    </h3>
-
-                    <p>
-                        Pagá tus compras de forma sencilla con Mercado Pago.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="info-item">
-
                 <span class="info-icon" aria-hidden="true">
                     📦
                 </span>
-
                 <div class="info-content">
                     <h3>
-                        Correo Argentino
+                        Despachos
                     </h3>
-
                     <p>
-                        Preparamos y enviamos tus pedidos con cuidado.
+                        Se realizan por lo general los viernes. Demora de 3 a 7 días hábiles.
                     </p>
                 </div>
+            </article>
 
+            <article class="info-item">
+                <span class="info-icon" aria-hidden="true">
+                    💳
+                </span>
+                <div class="info-content">
+                    <h3>
+                        Formas de pago
+                    </h3>
+                    <p>
+                        Nuestras formas de pago incluyen Mercado Pago.
+                    </p>
+                </div>
+            </article>
+
+            <article class="info-item">
+                <span class="info-icon" aria-hidden="true">
+                    📍
+                </span>
+                <div class="info-content">
+                    <h3>
+                        Costo de envío
+                    </h3>
+                    <p>
+                        Se muestra según el total de compra y ubicación al realizar el pedido.
+                    </p>
+                </div>
             </article>
 
         </div>

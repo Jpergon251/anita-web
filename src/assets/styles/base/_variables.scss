@@ -15,11 +15,15 @@
    --color-pink-700: #733B4F;
 
 
-   --color-blue-50: #EBFBFF;
-   --color-blue-100: #CFEFF5;
-   --color-blue-300:#85bdc7;
-   --color-blue-500: #307080; /* tu principal */
-   --color-blue-700: #1F4E59;
+   --color-primary: var(--color-pink-500);
+   --color-secondary: var(--color-pink-400);
+
+   /* Paleta de acento rosado empolvado / malva (reemplazo del azul) */
+   --color-blue-50: #FFF5F8;
+   --color-blue-100: #FCE8EE;
+   --color-blue-300: #C97D97;
+   --color-blue-500: #8E4A62; /* tono acento malva con alto contraste */
+   --color-blue-700: #643243; /* tono acento profundo */
 
   /* ===========================
      Neutral Colors
@@ -69,7 +73,7 @@
      Fonts
   =========================== */
 
-   --font-main: 'Inter', sans-serif;
-   --font-hand: 'Playwrite ID', cursive;
+   --font-main: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+   --font-hand: 'Caveat', 'Playwrite ID', cursive;
 
 }

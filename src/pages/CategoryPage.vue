@@ -19,23 +19,40 @@
   </main>
 </template>
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import ProductGrid from "../components/shop/ProductGrid.vue";
 import { getCategoryBySlug } from "../services/categories";
 import { getProductsByCategory } from "../services/products";
+import { findKnownCategory } from "../utils/categoriesCatalog";
+
 const route = useRoute(),
   category = ref(null),
   products = ref([]),
   loading = ref(true);
-onMounted(async () => {
-  const result = await getCategoryBySlug(route.params.slug);
-  category.value = result.data;
-  if (category.value) {
-    const { data } = await getProductsByCategory(category.value.id);
-    products.value = data || [];
-    document.title = `${category.value.name} | Tienda`;
+
+async function loadCategory() {
+  loading.value = true;
+  try {
+    const result = await getCategoryBySlug(route.params.slug);
+    category.value = result?.data;
+    if (category.value) {
+      const { data } = await getProductsByCategory(category.value.id);
+      products.value = data || [];
+      document.title = `${category.value.name} | Tienda`;
+    } else {
+      const known = findKnownCategory(route.params.slug);
+      if (known) {
+        category.value = known;
+        products.value = [];
+        document.title = `${known.name} | Tienda`;
+      }
+    }
+  } finally {
+    loading.value = false;
   }
-  loading.value = false;
-});
+}
+
+onMounted(loadCategory);
+watch(() => route.params.slug, loadCategory);
 </script>

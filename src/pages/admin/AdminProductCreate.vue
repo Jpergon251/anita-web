@@ -1,7 +1,12 @@
 <template>
-    <section class="admin-page">
+    <section class="admin-page product-editor-page">
         <h1>Nuevo producto</h1>
-        <ProductForm :categories="categories" @saved="$router.push('/admin/products')" />
+        <div class="admin-form-modal product-form-modal" role="dialog" aria-modal="true" aria-labelledby="product-create-title">
+            <div class="product-form-modal__content">
+                <h2 id="product-create-title">Nuevo producto</h2>
+                <ProductForm :categories="categories" @saved="$router.push('/admin/products')" />
+            </div>
+        </div>
     </section>
 </template>
 

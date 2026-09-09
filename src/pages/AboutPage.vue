@@ -31,21 +31,39 @@
                     <p>
                         ¡Hola! Soy
                         <strong>Analia Del Carmen</strong>,
-                        Lic. en Psicopedagogía y Profesora en Educación Especial.
+                        soy Licenciada en Psicopedagogía y Profesora en Educación Especial.
                     </p>
 
                     <p>
-                        Un día, <strong>Rincón de la Esperanza</strong> nació como
-                        un emprendimiento dedicado a la creación de productos de
-                        papelería creativa y personalizada.
+                        Desde siempre tuve un cariño especial por el papel. Me gustaba escribir,
+                        anotar mis ideas, organizar mis días y guardar pequeños recuerdos en hojas que,
+                        de alguna manera, terminaban contando un poquito de mi historia.
                     </p>
 
                     <p>
-                        Nuestro objetivo es ofrecer diseños originales que
-                        permitan expresar emociones, celebrar momentos especiales
-                        y acompañar diferentes proyectos personales, educativos
-                        y laborales.
+                        Con el tiempo, descubrí que ese amor por escribir y crear podía convertirse
+                        también en una forma de expresar mi lado más creativo. Así fue como empecé a
+                        incursionar en el mundo de la papelería creativa y personalizada con
+                        <strong>Rincón de la Esperanza</strong>.
                     </p>
+
+                    <p>
+                        Hoy nace este emprendimiento con mucha ilusión y con el deseo de crear
+                        productos que no sean solamente bonitos, sino que también acompañen momentos,
+                        proyectos, sueños y pequeñas historias de cada persona.
+                    </p>
+
+                    <p>
+                        Porque para mí, escribir algo en un papel es mucho más que simplemente
+                        anotar… es guardar una idea, organizar un sueño, recordar un momento o darle un
+                        lugar especial a aquello que nos importa.
+                    </p>
+
+                    <blockquote class="about-story__quote">
+                        “Gracias por estar acá y acompañar este pequeño sueño. Ojalá cada creación
+                        encuentre un lugar especial en tu historia, así como cada hoja alguna vez
+                        encontró un lugar especial en la mía.”
+                    </blockquote>
 
                 </div>
 

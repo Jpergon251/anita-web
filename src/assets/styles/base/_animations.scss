@@ -30,3 +30,32 @@
 .fade-leave-from {
     opacity: 1;
 }
+
+/* Modal popups */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+}
+
+.modal-fade-enter-to,
+.modal-fade-leave-from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

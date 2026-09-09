@@ -1,8 +1,13 @@
 <template>
-    <section class="admin-page">
+    <section class="admin-page product-editor-page">
         <h1>Editar producto</h1>
         <p v-if="loading">Cargando producto…</p>
-        <ProductForm v-else-if="product" :product="product" :categories="categories" @saved="$router.push('/admin/products')" />
+        <div v-else-if="product" class="admin-form-modal product-form-modal" role="dialog" aria-modal="true" aria-labelledby="product-edit-title">
+            <div class="product-form-modal__content">
+                <h2 id="product-edit-title">Editar producto</h2>
+                <ProductForm :product="product" :categories="categories" @saved="$router.push('/admin/products')" />
+            </div>
+        </div>
         <p v-else class="error-state">No se encontró el producto.</p>
     </section>
 </template>
